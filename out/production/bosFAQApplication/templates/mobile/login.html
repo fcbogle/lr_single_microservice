@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/LR-Bos-Theme.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+
+<div data-role="page" id="login">
+
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <h1>Login Page</h1>
+        <a th:href="@{/bosfaqhome}" data-icon="home" data-iconpos="notext"></a>
+    </div>
+
+    <div data-role="content" data-theme="a">
+
+        <form th:action="@{/login}" method="post">
+            <fieldset>
+                <legend><h2>Please Login</h2></legend>
+                <br/>
+                <div th:if="${param.error}" class="alert alert-error">
+                    Invalid username and password
+                </div>
+                <div th:if="${param.logout}" class="alert alert.success">
+                    You have been logged out
+                </div>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Your email address" data-mini="true"/>
+                <br/>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Your password" data-mini="true"/>
+                <br/>
+                <button class="ui-btn ui-mini ui-corner-all ui-btn-inline">Login</button>
+                <!--
+                <input type="submit" data-inline="true" value="Submit"/>
+                -->
+            </fieldset>
+        </form>
+    </div>
+
+    <div data-role="footer" data-theme="a">
+        <h5><small>&copy; digitalPilgrim 2016 Ltd</small></h5>
+    </div>
+
+
+</div>
+
+</body>
+</html>

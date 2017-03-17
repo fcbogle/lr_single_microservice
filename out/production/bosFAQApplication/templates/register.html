@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/LR-Bos-Theme.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+
+<div data-role="page" id="register">
+
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <h1>Registration Page</h1>
+        <a th:href="@{/bosfaqhome}" data-icon="home" data-iconpos="notext"></a>
+    </div>
+
+    <div data-role="content" data-theme="a">
+        <h2>Register New Person</h2>
+
+        <form th:action="@{/register}" th:object="${lrqaPerson}" method="post" data-theme="a">
+            <fieldset>
+                <legend><h3>Please Register</h3></legend>
+                <br/>
+                <label for="email">Username</label>
+                <input type="text" th:field="*{email}" placeholder="Your email address" id="email" data-mini="true" class="form-control"/>
+
+                <br/>
+                <label for="password">Password</label>
+                <input type="password" th:field="*{password}" placeholder="Your chosen password" id="password" data-mini="true" />
+
+                <br/>
+                <label for="firstname">First Name</label>
+                <input type="text" th:field="*{firstname}" placeholder="Your first name" id="firstname" data-mini="true" />
+
+                <br/>
+                <label for="lastname">Last Name</label>
+                <input type="text" th:field="*{lastname}" placeholder="Your last name" id="lastname" data-mini="true" />
+
+                <br/>
+                <label for="editpar">Office Country</label>
+                <input type="text" th:field="*{country}" placeholder="Your office country" id="editpar" data-mini="true"/>
+
+                <br/>
+                <label for="editcon">Authority</label>
+                <input type="text" th:field="*{authority}" placeholder="Your authority" id="editcon" data-mini="true" />
+
+                <br/>
+
+            </fieldset>
+            <button class="ui-btn ui-mini ui-corner-all ui-btn-inline">Register</button>
+
+        </form>
+
+    </div>
+
+    <div data-role="content" th:include="_links :: nav"/>
+
+
+    <div data-role="footer" data-theme="a">
+        <h5><small>&copy; digitalPilgrim 2016 Ltd</small></h5>
+    </div>
+
+</div>
+
+</body>
+
+</html>

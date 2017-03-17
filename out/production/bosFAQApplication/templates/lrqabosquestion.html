@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="css/LR-Bos-Theme.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+
+<div data-role="page" id="home">
+
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <h1>Submit LRQA Question</h1>
+        <a th:href="@{/bosassessorhome}" data-icon="home" data-iconpos="notext"></a>
+    </div>
+
+    <div data-role="content" data-theme="a">
+        <h3>Define Question</h3>
+
+        <form th:action="@{/asklrqaquestion}" th:object="${lrqaBosQuestion}" method="post" data-theme="b">
+            <fieldset>
+                <br/>
+                <label for="questionTit">Question Tagline</label>
+                <input type="text" th:field="*{questionTitle}" placeholder="Your question topic" id="questionTit"
+                       data-mini="true" class="form-control"/>
+                <br/>
+                <label for="textarea">Question Description</label>
+                <textarea name="textarea" id="textarea" th:field="*{questionText}" placeholder="Your question description" data-mini="true"></textarea>
+            </fieldset>
+            <button class="ui-btn ui-mini ui-corner-all ui-btn-inline">Submit</button>
+        </form>
+
+    </div>
+
+    <div data-role="content" th:include="_links :: nav"/>
+
+    <div th:include="_links :: security"/>
+
+
+    <div data-role="footer" data-theme="a">
+        <h5>
+            <small>&copy; digitalPilgrim 2016 Ltd</small>
+        </h5>
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-starter-remote-shell:1.4.1.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../gradle-2.14/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-remote-shell/1.4.1.RELEASE/9c2148de4d5606014637e555ce52b42651dcdbdb/spring-boot-starter-remote-shell-1.4.1.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../gradle-2.14/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-remote-shell/1.4.1.RELEASE/78a48ac8aadc54c0af886e1fdebdfe8b26eaf1d8/spring-boot-starter-remote-shell-1.4.1.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

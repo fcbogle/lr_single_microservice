@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="css/LR-Bos-Theme.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+
+<div data-role="page" id="home">
+
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <h2>LRQA Assessor Home</h2>
+        <a th:href="@{/bosfaqhome}" data-icon="home" data-iconpos="notext"></a>
+    </div>
+
+    <div data-role="content" data-theme="a">
+
+        <h3>Assessor :
+            <span th:text="${lrqaPerson.firstname} + ' ' +${lrqaPerson.lastname}"></span></h3>
+
+        <br/>
+
+        <ul data-role="listview">
+            <li><a th:href="${assessorViewAskQuestionLink.href}">Ask new question</a></li>
+            <li><a th:href="@{/getmyanswers}">View my answers</a></li>
+        </ul>
+    </div>
+
+    <div th:include="_links :: security" />
+
+    <div data-role="footer" data-theme="a">
+        <h5><small>&copy; digitalPilgrim 2016 Ltd</small></h5>
+    </div>
+
+</div>
+
+</body>
+</html>

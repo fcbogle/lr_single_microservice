@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="css/LR-Bos-Theme.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+
+<div data-role="page" id="home">
+
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <h1>Answers Page</h1>
+        <a th:href="@{/bosassessorhome}" data-icon="home" data-iconpos="notext"></a>
+    </div>
+
+    <div data-role="content" data-theme="a">
+
+        <h3>Questions submitted by
+            <span th:text=" ${lrqaPerson.firstname} + ' ' +${lrqaPerson.lastname}"></span></h3>
+
+        <form>
+
+            <fieldset data-role="collapsible" data-iconpos="right" data-inset="false">
+                <h2>My Answers</h2>
+                <div data-role="content" data-theme="a">
+                    <div th:each="question : ${myQuestions}" data-role="collapsible">
+                        <h3><span th:text="${question.questionTitle}"></span></h3>
+                            <p>Answers provided by: </p>
+                                <ul th:each="a : ${question.answerResponders}" data-theme="a" data-role="collapsible">
+                                    <h4><span th:text="${a.answerCreator.firstname} + ' ' + ${a.answerCreator.lastname}"></span></h4>
+                                        <li>
+                                            <p>Question: <span th:text="${a.questionText}"></span></p>
+                                            <p>Answer: <span th:text="${a.answerText}"></span></p>
+                                        </li>
+                                </ul>
+                    </div>
+                </div>
+            </fieldset>
+
+        </form>
+
+
+        <div data-role="content" th:include="_links :: nav"/>
+
+        <div th:include="_links :: security"/>
+
+    </div>
+
+    <div data-role="footer" data-theme="a">
+        <h5>
+            <small>&copy; digitalPilgrim 2016 Ltd</small>
+        </h5>
+    </div>
+
+</div>
+
+</body>
+</html>

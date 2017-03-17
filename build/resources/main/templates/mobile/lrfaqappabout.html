@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="css/LR-Bos-Theme.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+
+<div data-role="page" id="home">
+
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <h1>About The App</h1>
+        <a th:href="@{/bosfaqhome}" data-icon="home" data-iconpos="notext"></a>
+    </div>
+
+    <div data-role="content" data-theme="a">
+        <section>
+            <article>
+                <h4>App Technologies</h4>
+                <p>Software engineering technologies used in this iteration of the development:</p>
+                <ul>
+                    <li><small>&copy; Pivotal Spring Boot</small></li>
+                    <li><small>&copy; Java Standard Edition</small></li>
+                    <li><small>&copy; MongoDB</small></li>
+                    <li><small>&copy; Thymeleaf Template Engine</small></li>
+                    <li><small>&copy; JQuery Mobile Markup</small></li>
+                    <li><small>&reg; &copy; digitalPilgrim Development</small></li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h4>App Deployment</h4>
+                <p>The LR FAQ App is deployed on two Cloud environments: Pivotal Web Services &copy; and
+                MongoLab &copy; MongoDB PaaS Cloud. A RESTful HTTP binding has been established between these
+                 Cloud based PaaS environments</p>
+                <img src="css/images/LRFAQApp.gif" alt="App logical architecture"
+                     style="max-width: 100%; height: auto; object-fit: contain"/>
+                <p>Luckily, both of the Cloud PaaS environments are controlled from a single web account</p>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h4>Development Backlog</h4>
+                <p>The development backlog includes the following:</p>
+                <ul>
+                    <li><small>Role Based Access Control</small></li>
+                    <li><small>Transport Layer Security</small></li>
+                    <li><small>Spring AMQP Messaging</small></li>
+                    <li><small>PDF Report Generation</small></li>
+                    <li><small>SMS Messaging Function</small></li>
+                    <li><small>Email Messaging Function</small></li>
+                </ul>
+            </article>
+        </section>
+
+    </div>
+
+    <div data-role="content" data-theme="a">
+        <a th:href="@{/bosfaqhome}" class="ui-btn ui-mini ui-corner-all ui-btn-inline">Home</a>
+    </div>
+
+    <div data-role="footer" data-theme="a">
+        <h5>
+            <small>&copy; digitalPilgrim 2016 Ltd</small>
+        </h5>
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

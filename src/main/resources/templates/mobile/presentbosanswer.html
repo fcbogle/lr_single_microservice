@@ -1,0 +1,57 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="css/LR-Bos-Theme.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+
+<div data-role="page" id="home">
+
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <h1>LR Answer</h1>
+        <a th:href="@{/bosadminhome}" data-icon="home" data-iconpos="notext"></a>
+    </div>
+
+    <div data-role="content" data-theme="a">
+
+        <h3>Answered by:
+            <span th:text="${lrqaAdmin.firstname} + ' ' +${lrqaAdmin.lastname}"></span></h3>
+
+        <form th:action="" th:object="lrqaBosAnswer" method="post" data-theme="a">
+            <fieldset>
+                <label for="name">Question title</label>
+                <input type="text" th:field="${lrqabosquestion.questionTitle}" th:readonly="true" id="name" data-mini="true" />
+                <br/>
+
+                <label for="textarea">Question details</label>
+                <textarea name="textarea" th:field="${lrqabosquestion.questionText}" th:readonly="true" id="textarea" data-mini="true" />
+                <br/>
+
+                <label for="textarea">Question details</label>
+                <textarea name="textarea" th:field="*{answerText}" id="textarea" data-mini="true" />
+                <br/>
+
+            </fieldset>
+        </form>
+
+        <div th:include="_links :: security" />
+
+        <div data-role="content" th:include="_links :: nav" />
+
+    </div>
+
+    <div data-role="footer" data-theme="b">
+        <h5><small>&copy; digitalPilgrim 2016 Ltd</small></h5>
+    </div>
+
+</div>
+
+</body>
+</html>
